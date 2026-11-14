@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b46">
+  <meta name="description" content="A personal Sales & Operations Planning learning hub.">
+  <title>S&OP Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="S and OP Academy home">
+        <span class="brand-mark">S<span>&</span>O</span>
+        <span class="brand-copy"><strong>S&OP Academy</strong><small>LEARNING WORKSPACE</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">▦</span> Overview</button>
+        <button class="nav-item" data-view="modules"><span class="nav-icon">▤</span> Learning modules <span class="nav-count">12</span></button>
+        <button class="nav-item" data-view="concepts"><span class="nav-icon">⌘</span> Concept map</button>
+        <button class="nav-item" data-view="glossary"><span class="nav-icon">Aa</span> Technical glossary</button>
+        <button class="nav-item" data-view="progress"><span class="nav-icon">◷</span> My progress</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="focus-card"><span class="focus-kicker">YOUR LEARNING PATH</span><strong>From fundamentals<br>to confident decisions.</strong><div class="focus-line"><i></i></div><small>Build knowledge one concept at a time.</small></div>
+        <div class="profile-row"><div class="avatar">ML</div><div><strong>My workspace</strong><small>Personal learning space</small></div><span class="status-dot"></span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuToggle" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="crumbCurrent">Overview</strong></div>
+        <div class="top-actions"><span class="save-state"><i></i> Saved on this device</span><button class="top-avatar">ML</button></div>
+      </header>
+
+      <section class="view active" id="view-dashboard">
+        <div class="welcome-row">
+          <div><div class="eyebrow">YOUR PERSONAL S&OP LEARNING HUB</div><h1>Make the connections.<br><em>Understand the whole picture.</em></h1><p class="intro">A structured path through demand, supply, inventory, and the decisions that bring them together.</p></div>
+          <div class="welcome-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core">S&OP</div><span class="orbit-tag tag-a">DEMAND</span><span class="orbit-tag tag-b">SUPPLY</span><span class="orbit-tag tag-c">INVENTORY</span></div>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card"><span class="stat-label">CURRICULUM</span><strong>12 <small>modules</small></strong><span class="stat-foot">A complete learning roadmap</span></article>
+          <article class="stat-card"><span class="stat-label">YOUR PROGRESS</span><strong id="progressPercent">0<small>%</small></strong><div class="mini-progress"><i id="progressBar"></i></div><span class="stat-foot" id="completedLabel">0 of 36 topics completed</span></article>
+          <article class="stat-card"><span class="stat-label">KNOWLEDGE LIBRARY</span><strong>24 <small>key terms</small></strong><span class="stat-foot">Searchable technical glossary</span></article>
+          <article class="stat-card"><span class="stat-label">LEARNING MODE</span><strong class="mode-value">Self-paced</strong><span class="stat-foot">Learn, practice, connect, repeat</span></article>
+        </div>
+        <div class="section-heading"><div><div class="eyebrow">PICK UP WHERE YOU LEFT OFF</div><h2>Continue learning</h2></div><button class="text-button" data-go="modules">View all modules <span>→</span></button></div>
+        <article class="continue-card">
+          <div class="continue-index">01</div><div class="continue-content"><span class="pill pill-blue">MODULE 01 · FOUNDATIONS</span><h3>Introduction to Sales & Operations Planning</h3><p>Understand what S&OP is, why organizations use it, and how functions work together.</p><div class="continue-meta"><span>3 topics</span><span>·</span><span>Beginner</span><span>·</span><span>About 45 min</span></div></div>
+          <button class="primary-button" data-open-module="0">Open module <span>→</span></button>
+        </article>
+        <div class="lower-grid">
+          <section class="panel roadmap-panel"><div class="panel-heading"><div><div class="eyebrow">THE BIG PICTURE</div><h3>Your learning roadmap</h3></div><button class="icon-button" data-go="modules">↗</button></div><div class="roadmap"><div class="road-step done"><span>01</span><div><strong>Understand the business</strong><small>Fundamentals · S&OP process</small></div></div><div class="road-step"><span>02</span><div><strong>Plan the demand</strong><small>Forecasting · demand signals</small></div></div><div class="road-step"><span>03</span><div><strong>Balance supply and inventory</strong><small>Capacity · materials · stock</small></div></div><div class="road-step"><span>04</span><div><strong>Make integrated decisions</strong><small>KPIs · scenarios · IBP</small></div></div></div></section>
+          <section class="panel concept-teaser"><div class="eyebrow">THINK IN SYSTEMS</div><h3>Concepts don't live<br>in isolation.</h3><p>Explore how a forecast flows into supply, production, inventory, and business decisions.</p><button class="outline-button" data-go="concepts">Explore concept map <span>→</span></button><div class="teaser-nodes"><i>Demand</i><b>↔</b><i>Supply</i><b>↔</b><i>Inventory</i></div></section>
+        </div>
+      </section>
+
+      <section class="view" id="view-modules">
+        <div class="page-heading"><div class="eyebrow">STRUCTURED CURRICULUM</div><h1>Learning modules</h1><p>Build your S&OP knowledge from the ground up. Each module contains topics, guided lectures, and practice.</p></div>
+        <div class="filter-row"><div class="search-box"><span>⌕</span><input id="moduleSearch" placeholder="Search modules or topics..." aria-label="Search modules"></div><select id="levelFilter" aria-label="Filter by level"><option value="all">All levels</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+        <div class="module-layout"><div class="module-list" id="moduleList"></div><aside class="module-aside"><div class="aside-sticky"><div class="eyebrow">LEARNING PRINCIPLE</div><h3>Learn the why,<br>not just the what.</h3><p>Every topic is designed to connect a definition to a business decision. Start with the fundamentals, then work toward applied problem-solving.</p><div class="aside-divider"></div><div class="aside-fact"><span>01</span><div><strong>Understand</strong><small>Learn the concept and its purpose.</small></div></div><div class="aside-fact"><span>02</span><div><strong>Apply</strong><small>Work through examples and calculations.</small></div></div><div class="aside-fact"><span>03</span><div><strong>Connect</strong><small>See how it affects other functions.</small></div></div></div></aside></div>
+      </section>
+
+      <section class="view" id="view-concepts">
+        <div class="page-heading"><div class="eyebrow">SYSTEMS THINKING</div><h1>Concept map</h1><p>Explore how the major disciplines of S&OP influence one another. Select a concept to inspect its role and connections.</p></div>
+        <div class="map-toolbar"><span class="map-hint"><i></i> SELECT A NODE TO EXPLORE</span><button class="text-button" id="resetMap">Reset selection ↺</button></div>
+        <div class="concept-workspace"><div class="concept-canvas" id="conceptCanvas">
+          <svg class="map-lines" viewBox="0 0 800 520" preserveAspectRatio="none" aria-hidden="true"><path d="M400 75 L190 190 M400 75 L600 190 M190 190 L400 300 M600 190 L400 300 M400 300 L190 420 M400 300 L600 420 M190 420 L400 475 M600 420 L400 475 M190 190 L600 190" /><path class="line-dash" d="M190 190 L190 420 M600 190 L600 420"/></svg>
+          <button class="map-node node-sop selected" data-concept="S&OP"><small>INTEGRATION</small><strong>Sales & Operations<br>Planning</strong></button>
+          <button class="map-node node-demand" data-concept="Demand Planning"><small>COMMERCIAL INPUT</small><strong>Demand<br>Planning</strong></button>
+          <button class="map-node node-supply" data-concept="Supply Planning"><small>OPERATIONS INPUT</small><strong>Supply<br>Planning</strong></button>
+          <button class="map-node node-production" data-concept="Production Planning"><small>EXECUTION</small><strong>Production<br>Planning</strong></button>
+          <button class="map-node node-inventory" data-concept="Inventory Management"><small>BUFFER</small><strong>Inventory<br>Management</strong></button>
+          <button class="map-node node-capacity" data-concept="Capacity Planning"><small>CONSTRAINT</small><strong>Capacity<br>Planning</strong></button>
+          <button class="map-node node-finance" data-concept="Financial Planning"><small>BUSINESS IMPACT</small><strong>Financial<br>Planning</strong></button>
+          <button class="map-node node-kpi" data-concept="Performance KPIs"><small>FEEDBACK</small><strong>Performance<br>KPIs</strong></button>
+        </div><aside class="concept-detail" id="conceptDetail"><div class="eyebrow">SELECTED CONCEPT</div><span class="detail-chip">CORE PROCESS</span><h2>Sales & Operations Planning</h2><p>A cross-functional business planning process that aligns demand, supply, and financial plans into one achievable operating plan.</p><div class="detail-section"><strong>What it connects</strong><ul><li>Demand signals and commercial priorities</li><li>Supply, production, and capacity constraints</li><li>Inventory targets and financial outcomes</li></ul></div><div class="detail-section"><strong>Why it matters</strong><p>It creates one agreed plan so teams can make coordinated trade-offs instead of optimizing in silos.</p></div><div class="detail-section"><strong>Related concepts</strong><div class="related-tags" id="relatedTags"><span>Demand Planning</span><span>Supply Planning</span><span>Inventory</span></div></div></aside></div>
+        <div class="relationship-legend"><span><i class="legend-solid"></i> Direct influence / input</span><span><i class="legend-dash"></i> Feedback / constraint</span></div>
+      </section>
+
+      <section class="view" id="view-glossary">
+        <div class="page-heading"><div class="eyebrow">YOUR TECHNICAL REFERENCE</div><h1>Technical glossary</h1><p>Quickly look up the language of demand, supply, inventory, and operations planning.</p></div>
+        <div class="glossary-tools"><div class="search-box"><span>⌕</span><input id="glossarySearch" placeholder="Search a term, acronym, or definition..." aria-label="Search glossary"></div><div class="letter-filter" id="letterFilter"><button class="active" data-letter="all">All</button><button data-letter="A">A</button><button data-letter="B">B</button><button data-letter="C">C</button><button data-letter="D">D</button><button data-letter="L">L</button><button data-letter="M">M</button><button data-letter="O">O</button><button data-letter="R">R</button><button data-letter="S">S</button></div></div>
+        <div class="glossary-count" id="glossaryCount">24 TERMS</div><div class="glossary-grid" id="glossaryGrid"></div>
+      </section>
+
+      <section class="view" id="view-progress">
+        <div class="page-heading"><div class="eyebrow">YOUR DEVELOPMENT</div><h1>My progress</h1><p>Track completed topics and keep your learning momentum visible.</p></div>
+        <div class="progress-summary"><div><span class="stat-label">OVERALL COMPLETION</span><strong id="progressBig">0%</strong><p id="progressDescription">Your learning journey starts here.</p></div><div class="progress-ring" id="progressRing"><span id="ringValue">0%</span></div></div>
+        <div class="section-heading"><div><div class="eyebrow">CURRICULUM STATUS</div><h2>Module progress</h2></div></div><div class="progress-modules" id="progressModules"></div>
+        <div class="note-box"><strong>Progress is saved locally.</strong><p>This draft stores completed topics in this browser on this device. Cloud sync, accounts, and cross-device progress are planned for a later build.</p></div>
+      </section>
+
+      <footer class="footer"><span>S&OP ACADEMY <b>·</b> DRAFT 0.1</span><span>Learn the concepts. Connect the decisions.</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="lessonModal" aria-hidden="true"><section class="lesson-modal" role="dialog" aria-modal="true" aria-labelledby="lessonTitle"><div class="modal-top"><span class="pill pill-blue" id="lessonModule">MODULE 01</span><button class="close-modal" id="closeLesson" aria-label="Close lesson">×</button></div><div class="lesson-scroll"><div class="eyebrow" id="lessonTopic">TOPIC 1.1</div><h2 id="lessonTitle">What is S&OP?</h2><div class="lesson-meta" id="lessonMeta">LECTURE · 10 MIN READ</div><div id="lessonBody" class="lesson-body"></div><div class="lesson-callout"><strong>Connect the concept</strong><p id="lessonConnection"></p></div><div class="quiz-box"><div class="eyebrow">KNOWLEDGE CHECK</div><h3 id="quizQuestion"></h3><div id="quizOptions" class="quiz-options"></div><p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p></div></div><div class="modal-bottom"><span id="lessonStatus">Not completed</span><button class="primary-button" id="completeLesson">Mark topic complete ✓</button></div></section></div>
+  <script src="app.js"></script>
+</body>
+</html>
