@@ -21,7 +21,7 @@
       <div class="side-label">WORKSPACE</div>
       <nav class="main-nav" aria-label="Main navigation">
         <button class="nav-item active" data-view="dashboard"><span class="nav-icon">▦</span> Overview</button>
-        <button class="nav-item" data-view="modules"><span class="nav-icon">▤</span> Learning modules <span class="nav-count">12</span></button>
+        <button class="nav-item" data-view="modules"><span class="nav-icon">▤</span> Learning modules <span class="nav-count">1</span></button>
         <button class="nav-item" data-view="concepts"><span class="nav-icon">⌘</span> Concept map</button>
         <button class="nav-item" data-view="glossary"><span class="nav-icon">Aa</span> Technical glossary</button>
         <button class="nav-item" data-view="progress"><span class="nav-icon">◷</span> My progress</button>
@@ -45,8 +45,8 @@
           <div class="welcome-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit-core">S&OP</div><span class="orbit-tag tag-a">DEMAND</span><span class="orbit-tag tag-b">SUPPLY</span><span class="orbit-tag tag-c">INVENTORY</span></div>
         </div>
         <div class="stats-grid">
-          <article class="stat-card"><span class="stat-label">CURRICULUM</span><strong>12 <small>modules</small></strong><span class="stat-foot">A complete learning roadmap</span></article>
-          <article class="stat-card"><span class="stat-label">YOUR PROGRESS</span><strong id="progressPercent">0<small>%</small></strong><div class="mini-progress"><i id="progressBar"></i></div><span class="stat-foot" id="completedLabel">0 of 36 topics completed</span></article>
+          <article class="stat-card"><span class="stat-label">CURRICULUM</span><strong>1 <small>module</small></strong><span class="stat-foot">A complete learning roadmap</span></article>
+          <article class="stat-card"><span class="stat-label">YOUR PROGRESS</span><strong id="progressPercent">0<small>%</small></strong><div class="mini-progress"><i id="progressBar"></i></div><span class="stat-foot" id="completedLabel">0 of 6 topics completed</span></article>
           <article class="stat-card"><span class="stat-label">KNOWLEDGE LIBRARY</span><strong>24 <small>key terms</small></strong><span class="stat-foot">Searchable technical glossary</span></article>
           <article class="stat-card"><span class="stat-label">LEARNING MODE</span><strong class="mode-value">Self-paced</strong><span class="stat-foot">Learn, practice, connect, repeat</span></article>
         </div>
@@ -97,11 +97,12 @@
         <div class="note-box"><strong>Progress is saved locally.</strong><p>This draft stores completed topics in this browser on this device. Cloud sync, accounts, and cross-device progress are planned for a later build.</p></div>
       </section>
 
-      <footer class="footer"><span>S&OP ACADEMY <b>·</b> DRAFT 0.1</span><span>Learn the concepts. Connect the decisions.</span></footer>
+      <footer class="footer"><span>S&OP ACADEMY <b>·</b> DRAFT 0.2 · MODULE 01</span><span>Learn the concepts. Connect the decisions.</span></footer>
     </main>
   </div>
 
-  <div class="modal-backdrop" id="lessonModal" aria-hidden="true"><section class="lesson-modal" role="dialog" aria-modal="true" aria-labelledby="lessonTitle"><div class="modal-top"><span class="pill pill-blue" id="lessonModule">MODULE 01</span><button class="close-modal" id="closeLesson" aria-label="Close lesson">×</button></div><div class="lesson-scroll"><div class="eyebrow" id="lessonTopic">TOPIC 1.1</div><h2 id="lessonTitle">What is S&OP?</h2><div class="lesson-meta" id="lessonMeta">LECTURE · 10 MIN READ</div><div id="lessonBody" class="lesson-body"></div><div class="lesson-callout"><strong>Connect the concept</strong><p id="lessonConnection"></p></div><div class="quiz-box"><div class="eyebrow">KNOWLEDGE CHECK</div><h3 id="quizQuestion"></h3><div id="quizOptions" class="quiz-options"></div><p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p></div></div><div class="modal-bottom"><span id="lessonStatus">Not completed</span><button class="primary-button" id="completeLesson">Mark topic complete ✓</button></div></section></div>
+  <div class="modal-backdrop" id="lessonModal" aria-hidden="true"><section class="lesson-modal" role="dialog" aria-modal="true" aria-labelledby="lessonTitle"><div class="modal-top"><span class="pill pill-blue" id="lessonModule">MODULE 01</span><button class="close-modal" id="closeLesson" aria-label="Close lesson">×</button></div><div class="lesson-scroll"><div class="eyebrow" id="lessonTopic">TOPIC 1.1</div><h2 id="lessonTitle">What is S&OP?</h2><div class="lesson-meta" id="lessonMeta">LECTURE · 10 MIN READ</div><div class="lecture-nav" id="lectureNav" aria-label="Lectures in this topic"></div><div id="lessonBody" class="lesson-body"></div><div class="lesson-callout"><strong>Connect the concept</strong><p id="lessonConnection"></p></div><div class="quiz-box"><div class="eyebrow">KNOWLEDGE CHECK</div><h3 id="quizQuestion"></h3><div id="quizOptions" class="quiz-options"></div><p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p></div></div><div class="modal-bottom"><span id="lessonStatus">Not completed</span><button class="primary-button" id="completeLesson">Mark topic complete ✓</button></div></section></div>
+  <script src="module01.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
