@@ -19,9 +19,9 @@ let currentLesson = null;
 let currentModule = 0;
 
 function totalTopics(){return modules.reduce((n,m)=>n+m.topics.length,0)}
-function completedCount(){return completed.size}
+function completedCount(){return totalTopics()===0?0:completed.size}
 function updateProgress(){
- const pct=Math.round(completedCount()/totalTopics()*100);
+ const total=totalTopics();const pct=total?Math.round(completedCount()/total*100):0;
  $("#progressPercent").innerHTML=pct+'<small>%</small>';$("#progressBar").style.width=pct+"%";
  $("#completedLabel").textContent=completedCount()+" of "+totalTopics()+" topics completed";
  $("#progressBig").textContent=pct+"%";$("#ringValue").textContent=pct+"%";
@@ -45,12 +45,12 @@ function renderModules(){
  modules.forEach((m,i)=>{
   const matches=m.title.toLowerCase().includes(q)||m.desc.toLowerCase().includes(q)||m.topics.some(t=>t.name.toLowerCase().includes(q));
   if(!matches||(level!=="all"&&m.level!==level))return;
-  if(i===0 && !q && level==="all"){
+  if(i===0 && !q && level==="all" && (m.objectives.length || m.references.length)){
    const intro=document.createElement("section");intro.className="module-objectives";
    intro.innerHTML='<div class="eyebrow">MODULE 01 LEARNING OUTCOMES</div><h3>By the end of this module, you should be able to:</h3><ul>'+m.objectives.map(x=>'<li>'+x+'</li>').join("")+'</ul><div class="module-references"><strong>Reference reading</strong><div>'+m.references.map(x=>'<a href="'+x.url+'" target="_blank" rel="noopener noreferrer">'+x.label+' ↗</a>').join("")+'</div></div>';
    root.appendChild(intro);
   }
-  const done=m.topics.filter((t,j)=>completed.has(i+"-"+j)).length,pct=Math.round(done/m.topics.length*100);
+  const done=m.topics.filter((t,j)=>completed.has(i+"-"+j)).length,pct=m.topics.length?Math.round(done/m.topics.length*100):0;
   const card=document.createElement("article");card.className="module-card"+(i===0?" open":"");
   card.innerHTML='<button class="module-head"><span class="module-number">'+String(i+1).padStart(2,"0")+'</span><span class="module-info"><span class="eyebrow">'+m.level.toUpperCase()+' · MODULE '+String(i+1).padStart(2,"0")+'</span><strong>'+m.title+'</strong><small>'+m.topics.length+' topics · '+m.desc+'</small></span><span class="module-progress">'+done+'/'+m.topics.length+'<i><b style="width:'+pct+'%"></b></i></span><span class="module-chevron">⌄</span></button><div class="module-topics">'+m.topics.map((t,j)=>'<div class="topic-row"><span class="topic-check '+(completed.has(i+"-"+j)?"done":"")+'">'+(completed.has(i+"-"+j)?"✓":"")+'</span><span class="topic-text"><strong>'+t.name+'</strong><small>'+t.lectures+' lectures · '+t.minutes+' min</small></span><button data-topic="'+i+'-'+j+'">Open topic →</button></div>').join("")+'</div>';
   card.querySelector(".module-head").addEventListener("click",()=>card.classList.toggle("open"));
@@ -109,8 +109,8 @@ $("#resetMap").addEventListener("click",()=>renderConcept("S&OP"));
 
 function renderProgress(){
  const root=$("#progressModules");root.innerHTML=modules.map((m,i)=>{
-  const done=m.topics.filter((t,j)=>completed.has(i+"-"+j)).length,pct=Math.round(done/m.topics.length*100);
-  return '<article class="progress-module"><div class="progress-module-head"><strong>'+String(i+1).padStart(2,"0")+' · '+m.title+'</strong><small>'+done+'/'+m.topics.length+'</small></div><div class="progress-track"><i style="width:'+pct+'%"></i></div></article>';
+  const done=m.topics.filter((t,j)=>completed.has(i+"-"+j)).length,pct=m.topics.length?Math.round(done/m.topics.length*100):0;
+  return '<article class="progress-module"><div class="progress-module-head"><strong>'+String(i+1).padStart(2,"0")+' · '+m.title+'</strong><small>'+done+'/'+m.topics.length+' topics</small></div><div class="progress-track"><i style="width:'+pct+'%"></i></div><p class="empty-state">No topics added yet.</p></article>';
  }).join("");
 }
 updateProgress();renderModules();renderGlossary();renderProgress();
